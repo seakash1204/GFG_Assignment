@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-2</title>
+</head>
+<body>
+    <input type="text" class="textBox" placeholder="enter some text...">
+    <div id="root"></div>
+    <button class="mirror">Mirror</button>
+    <p id="reverse"></p>
+</body>
+<script>
+    let container = document.getElementById('root');
+    let textContainer = document.querySelector('.textBox');
+    let result = textContainer.addEventListener('keyup', (event)=>{
+        return container.innerHTML = event.target.value;
+    })
+
+    let mirror = document.querySelector('.mirror');
+    let reverseMirror = document.querySelector('#reverse');
+    mirror.addEventListener("click", (event) => {
+        reverseMirror.innerHTML = textContainer.value.split("").reverse().join("    ");
+    })
+
+
+</script>
+</html>
