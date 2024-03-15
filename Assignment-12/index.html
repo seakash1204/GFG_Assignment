@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #container{
+            width: 400px;
+            height: 200px;
+            box-shadow: 0 0 10px black;
+            margin: 20px auto;
+            text-align: center;
+            padding-top: 20px;
+            }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <input type="text" class="input-box brand" placeholder="Brand" /> <br> <br>
+      <input type="text" class="input-box model" placeholder="Model" /> <br> <br>
+      <input type="text" class="input-box year" placeholder="Year" /> <br> <br>
+      <button id="addItem">Add</button>
+    </div>
+  </body>
+  <script>
+    let brandName = document.querySelector(".brand")
+    let modelName = document.querySelector(".model")
+    let year = document.querySelector(".year")
+    let addNewItem = document.querySelector("#addItem")
+    addNewItem.addEventListener("click", (event)=>{
+        console.log(brandName.value);
+    })
+  </script>
+</html>
