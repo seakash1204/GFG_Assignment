@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assingment 7</title>
+  </head>
+  <body>
+    <div
+      style="
+        box-shadow: 0 0 10px black;
+        height: 300px;
+        width: 300px;
+        margin: 10px auto;
+        text-align: center;
+        padding: 20px;
+      "
+    >
+      <select name="" id="selectFavoriteItem">
+        <option value="">Select Favorite item</option>
+        <option value="Burger">Burger</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Samosa">Samosa</option>
+        <option value="Cake">Cake</option>
+        <option value="Chicken">Chicken</option>
+      </select>
+      <button id="addItem">Add Item</button>
+      <ul class="showItem"></ul>
+    </div>
+  </body>
+  <script>
+    let favoriteItem = document.getElementById("selectFavoriteItem");
+    let addItemButton = document.querySelector("#addItem");
+    let showItem = document.querySelector(".showItem");
+    let showAllItem = [];
+    addItemButton.addEventListener("click", () => {
+      if (favoriteItem.value == "") {
+        alert("Item is empty, please select atleast one item");
+      } else {
+        if (showAllItem.includes(favoriteItem.value)) {
+          alert("Item already Added");
+        } else {
+          showAllItem.push(favoriteItem.value);
+          let li = document.createElement("li");
+          li.innerHTML = "";
+          li.innerHTML = favoriteItem.value;
+          showItem.append(li);
+        }
+      }
+    });
+  </script>
+</html>
