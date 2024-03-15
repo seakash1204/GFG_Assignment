@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 9</title>
+  </head>
+  <body>
+    <table id="table" border="1 px solid black">
+      <tr>
+        <td>Row 1 Col 1</td>
+        <td>Row 1 Col 2</td>
+        <td>Row 1 Col 3</td>
+      </tr>
+      <tr>
+        <td>Row 2 Col 1</td>
+        <td>Row 2 Col 2</td>
+        <td>Row 2 Col 3</td>
+      </tr>
+      <tr>
+        <td>Row 3 Col 1</td>
+        <td>Row 3 Col 2</td>
+        <td>Row 3 Col 3</td>
+      </tr>
+    </table>
+    <br />
+    <button id="insert">Add New Row</button>
+  </body>
+  <script>
+    let table = document.getElementById("table");
+        let insertButton = document.getElementById("insert");
+        
+        insertButton.addEventListener("click", () => {
+          let row = table.insertRow(0);
+          for (let i = 0; i < 3; i++) {
+            let x = row.insertCell(i);
+            x.innerText = `New Cell${i + 1}`;
+          }
+        });
+  </script>
+</html>
