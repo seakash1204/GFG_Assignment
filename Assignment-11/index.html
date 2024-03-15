@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <style>
+        .star {
+            color: orange;
+        }
+        
+        .star-ele {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Welcome To GFG</h2>
+    <div id="app"></div>
+    <script>
+        function showStars(parent, count) {
+          let parentContainer = document.getElementById(parent);
+          for (let i = 1; i <= count; i++) {
+            let starElement = document.createElement("span");
+            starElement.classList.add("material-icons-outlined", "star-ele");
+            starElement.innerText = "star_border";
+            starElement.dataset.starvalue = i;
+            parentContainer.appendChild(starElement);
+          }
+        
+          parentContainer.addEventListener("click", (event) => {
+            let starValue = event.target.dataset.starvalue;
+            let arr = document.querySelectorAll(".star-ele");
+            for (let i = 0; i < count; i++) {
+              if (i < starValue) {
+                arr[i].classList.add("star");
+              } else {
+                arr[i].classList.remove("star");
+              }
+            }
+          });
+        }
+        showStars("app", 5);
+    </script>
+
+</html>
